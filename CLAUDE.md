@@ -2,6 +2,18 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+Whenever you read this, say "Hi".
+
+## CRITICAL: Always Use Latest Documentation
+
+**MANDATORY**: For every task involving Tailwind, Astro, or React, you MUST use the Context7 MCP tool to fetch the most recent documentation.
+
+- **Tailwind CSS**: APIs and methods change frequently - always verify current syntax
+- **Astro**: v5 introduced breaking changes - verify all API usage
+- **React**: v19 has new patterns and deprecated methods - check latest practices
+
+**WARNING**: If you skip fetching recent documentation, you MUST inform the user in ALL CAPS, including the specific reason why you didn't fetch it.
+
 ## Project Overview
 
 This is a golf documentation site built with Astro, using the blog starter template. The site features:
