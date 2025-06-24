@@ -16,6 +16,12 @@ Project structure and architectural patterns:
 
 - [@architecture/astro-basic-structure.md](architecture/astro-basic-structure.md) - Understanding minimal Astro project structure
 
+## UI Design Resources
+
+Component examples and design patterns:
+
+- [@tailwind-plus/](tailwind-plus/) - Tailwind Plus UI components and patterns
+
 ## Development Guidelines
 
 Reference the main project documentation in [@../CLAUDE.md](../CLAUDE.md) and [@../ARCHITECTURE.md](../ARCHITECTURE.md) for development standards and project architecture.
