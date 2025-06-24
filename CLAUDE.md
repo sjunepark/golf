@@ -51,6 +51,14 @@ Modern frontend technologies evolve rapidly. Always verify current documentation
 - **High Priority Task**: Converting Headless UI to Shadcn UI when implementing Tailwind Plus designs
 - **Implementation Strategy**: Preserve Tailwind Plus styling while using Shadcn component structure
 
+### Primary Color Convention
+
+**When applying Tailwind Plus designs, replace fixed indigo colors with CSS variables:**
+
+- Replace `indigo-500`, `indigo-600`, etc. with `primary`
+- Use `--primary` CSS variable defined in `src/styles/global.css`
+- Example: `bg-indigo-600` → `bg-primary`, `text-indigo-500` → `text-primary`
+
 ### Design References
 
 - Design reference files should be stored in the `knowledge/` directory
