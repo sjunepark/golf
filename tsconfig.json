@@ -9,13 +9,13 @@
   ],
   "compilerOptions": {
     "strictNullChecks": true,
-    // Recommended by shadcn
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        // Recommended by shadcn
         "./src/*"
       ]
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
