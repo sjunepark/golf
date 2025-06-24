@@ -2,11 +2,19 @@
 
 This directory contains project-specific knowledge and documentation.
 
-## Project Structure & Architecture
+## Framework Version Differences
 
-- [@astro-basic-structure.md](astro-basic-structure.md) - Understanding minimal Astro project structure
-- [@tailwind-v3-vs-v4.md](tailwind-v3-vs-v4.md) - Tailwind CSS version differences  
-- [@astro-v4-vs-v5.md](astro-v4-vs-v5.md) - Astro version differences
+Critical documentation for version-specific changes. **Always reference these when working with the respective frameworks.**
+
+- [@frameworks/tailwind-v3-vs-v4.md](frameworks/tailwind-v3-vs-v4.md) - Tailwind CSS version differences and migration guide
+- [@frameworks/astro-v4-vs-v5.md](frameworks/astro-v4-vs-v5.md) - Astro version differences and breaking changes  
+- [@frameworks/react-v18-vs-v19.md](frameworks/react-v18-vs-v19.md) - React version differences and new features
+
+## Architecture & Structure
+
+Project structure and architectural patterns:
+
+- [@architecture/astro-basic-structure.md](architecture/astro-basic-structure.md) - Understanding minimal Astro project structure
 
 ## Development Guidelines
 
