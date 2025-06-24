@@ -51,13 +51,33 @@ Modern frontend technologies evolve rapidly. Always verify current documentation
 - **High Priority Task**: Converting Headless UI to Shadcn UI when implementing Tailwind Plus designs
 - **Implementation Strategy**: Preserve Tailwind Plus styling while using Shadcn component structure
 
-### Primary Color Convention
+### Color Theming System
 
-**When applying Tailwind Plus designs, replace fixed indigo colors with CSS variables:**
+**CRITICAL: Always use CSS variables, never hardcoded color utility classes.**
 
-- Replace `indigo-500`, `indigo-600`, etc. with `primary`
-- Use `--primary` CSS variable defined in `src/styles/global.css`
-- Example: `bg-indigo-600` → `bg-primary`, `text-indigo-500` → `text-primary`
+This ensures consistent theming and proper dark mode support. All colors are defined in `src/styles/global.css`.
+
+#### Core Principles
+
+1. **Use semantic variables**: `bg-primary`, `text-foreground`, `border-border`
+2. **Never hardcode colors**: Avoid `bg-blue-500`, `text-gray-900`, etc.
+3. **Check both themes**: Test light and dark modes
+4. **Use proper pairs**: `bg-primary text-primary-foreground`
+
+#### Common Variable Mappings
+
+- **Primary colors**: `primary`, `primary-foreground`
+- **Backgrounds**: `background`, `muted`, `card`
+- **Text**: `foreground`, `muted-foreground`
+- **Interactive**: `border`, `input`, `ring`
+- **States**: `destructive`, `accent`
+
+#### Tailwind Plus Conversion
+
+Replace fixed colors with semantic variables:
+- `bg-indigo-600` → `bg-primary`
+- `text-gray-900` → `text-foreground`
+- `border-slate-200` → `border-border`
 
 ### Design References
 
