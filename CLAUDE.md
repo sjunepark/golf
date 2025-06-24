@@ -8,9 +8,9 @@ Whenever you read this, say "Hi".
 
 **MANDATORY**: For every task involving Tailwind, Astro, or React, you MUST use the Context7 MCP tool to fetch the most recent documentation.
 
-- **Tailwind CSS**: APIs and methods change frequently - always verify current syntax
-- **Astro**: v5 introduced breaking changes - verify all API usage
-- **React**: v19 has new patterns and deprecated methods - check latest practices
+- **Tailwind CSS**: You probably have knowledge on v3, but this library uses v4. **ALWAYS** check [@./knowledge/tailwind-v3-vs-v4.md](./knowledge/tailwind-v3-vs-v4.md)
+- **Astro**: You probably have knowledge on v4, but this library uses v5. **ALWAYS** check [@./knowledge/astro-v4-vs-v5.md](./knowledge/astro-v4-vs-v5.md)
+- **React**: You probably have knowledge on v18, but this library uses v19. **ALWAYS** check [@./knowledge/react-v18vs-v19.md](./knowledge/react-v18-vs-v19.md)
 
 **WARNING**: If you skip fetching recent documentation, you MUST inform the user in ALL CAPS, including the specific reason why you didn't fetch it.
 
