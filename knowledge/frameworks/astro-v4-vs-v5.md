@@ -6,18 +6,15 @@ This document outlines the key differences between Astro v4 and v5. Claude Code 
 
 ### Astro.glob() - REMOVED
 
-```astro
-<!-- v4 -->
----
+```js
+// Astro file
+// v4
 const posts = await Astro.glob('./posts/*.md');
----
 
-<!-- v5 -->
----
+// v5
 const posts = Object.values(
-  import.meta.glob('./posts/*.md', { eager: true })
+  import.meta.glob('./posts/*.md', { eager: true }),
 );
----
 ```
 
 ### output: 'hybrid' - REMOVED

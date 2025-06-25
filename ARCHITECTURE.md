@@ -57,11 +57,11 @@ Blog posts require the following frontmatter:
 
 ```yaml
 ---
-title: string           # Required
-description: string     # Required
-pubDate: date          # Required (coerced to Date)
-updatedDate: date      # Optional
-heroImage: image       # Optional (processed by Astro)
+title: string # Required
+description: string # Required
+pubDate: date # Required (coerced to Date)
+updatedDate: date # Optional
+heroImage: image # Optional (processed by Astro)
 ---
 ```
 
@@ -132,8 +132,8 @@ Configured in `astro.config.mjs`:
 Global site configuration in `src/consts.ts`:
 
 ```typescript
-export const SITE_TITLE = 'Golf Documentation';
-export const SITE_DESCRIPTION = 'Your guide to golf';
+export const SITE_TITLE = "Golf Documentation";
+export const SITE_DESCRIPTION = "Your guide to golf";
 ```
 
 ### Astro Configuration

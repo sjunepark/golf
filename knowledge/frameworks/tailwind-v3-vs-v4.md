@@ -12,15 +12,15 @@ module.exports = {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
-  }
-}
+  },
+};
 
 // v4
 export default {
   plugins: {
-    "@tailwindcss/postcss": {}
-  }
-}
+    "@tailwindcss/postcss": {},
+  },
+};
 ```
 
 ### Vite Configuration
@@ -31,7 +31,7 @@ import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  plugins: [tailwindcss()]
+  plugins: [tailwindcss()],
 });
 ```
 
@@ -97,7 +97,11 @@ npx @tailwindcss/cli -i input.css -o output.css
 ```css
 /* To restore v3 behavior */
 @layer base {
-  *, ::after, ::before, ::backdrop, ::file-selector-button {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
 }
@@ -111,9 +115,9 @@ npx @tailwindcss/cli -i input.css -o output.css
 ```html
 <!-- v3 -->
 <button class="focus:ring">
-
-<!-- v4 equivalent -->
-<button class="focus:ring-3 focus:ring-blue-500">
+  <!-- v4 equivalent -->
+  <button class="focus:ring-3 focus:ring-blue-500"></button>
+</button>
 ```
 
 ### Placeholder Text
@@ -129,7 +133,8 @@ npx @tailwindcss/cli -i input.css -o output.css
 ```css
 /* To restore v3 behavior */
 @layer base {
-  button:not(:disabled), [role="button"]:not(:disabled) {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
     cursor: pointer;
   }
 }
@@ -168,9 +173,9 @@ npx @tailwindcss/cli -i input.css -o output.css
 ```html
 <!-- v3 -->
 <div class="bg-[--brand-color]">
-
-<!-- v4 -->
-<div class="bg-(--brand-color)">
+  <!-- v4 -->
+  <div class="bg-(--brand-color)"></div>
+</div>
 ```
 
 ### Theme Variable Access
@@ -191,7 +196,7 @@ npx @tailwindcss/cli -i input.css -o output.css
 
 ```html
 <!-- v4 - Prefixes now at beginning like variants -->
-<div class="tw:flex tw:bg-red-500">
+<div class="tw:flex tw:bg-red-500"></div>
 ```
 
 ### JavaScript Config Loading
@@ -210,7 +215,9 @@ npx @tailwindcss/cli -i input.css -o output.css
 
 ```html
 <!-- v4 - Use via-none to explicitly unset -->
-<div class="bg-linear-to-r from-red-500 via-orange-400 to-yellow-400 dark:via-none">
+<div
+  class="bg-linear-to-r from-red-500 via-orange-400 to-yellow-400 dark:via-none"
+></div>
 ```
 
 ### Space Utilities Performance
@@ -227,8 +234,9 @@ npx @tailwindcss/cli -i input.css -o output.css
 <!-- Order matters for direct child selectors -->
 <!-- v3 -->
 <ul class="first:*:pt-0 last:*:pb-0">
-<!-- v4 -->
-<ul class="*:first:pt-0 *:last:pb-0">
+  <!-- v4 -->
+  <ul class="*:first:pt-0 *:last:pb-0"></ul>
+</ul>
 ```
 
 ## 6. Component Framework Integration
@@ -238,12 +246,12 @@ npx @tailwindcss/cli -i input.css -o output.css
 ```vue
 <!-- Vue/Svelte/CSS Modules -->
 <style>
-  /* v4 - Need @reference */
-  @reference "../../app.css";
-  
-  h1 {
-    @apply text-2xl font-bold;
-  }
+/* v4 - Need @reference */
+@reference "../../app.css";
+
+h1 {
+  @apply text-2xl font-bold;
+}
 </style>
 ```
 
@@ -251,11 +259,11 @@ npx @tailwindcss/cli -i input.css -o output.css
 
 ```vue
 <style>
-  /* More performant approach */
-  h1 {
-    color: var(--color-red-500);
-    font-size: var(--text-2xl);
-  }
+/* More performant approach */
+h1 {
+  color: var(--color-red-500);
+  font-size: var(--text-2xl);
+}
 </style>
 ```
 
