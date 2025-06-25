@@ -107,6 +107,22 @@ Replace fixed colors with semantic variables, for example:
 
 All commands use pnpm as the package manager. Development server runs on `localhost:4321`.
 
+### Linting & Formatting
+
+```bash
+# Run ESLint on all files
+pnpm lint
+
+# Run ESLint with auto-fix
+pnpm lint:fix
+
+# Format all files with Prettier
+pnpm format
+
+# Check formatting without writing
+pnpm format:check
+```
+
 ## Content Creation
 
 To add new golf-related content:
