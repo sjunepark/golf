@@ -17,6 +17,11 @@ export default defineConfig({
         name: "Inter",
         cssVariable: "--font-inter",
       },
+      {
+        provider: fontProviders.fontsource(),
+        name: "Noto Sans KR",
+        cssVariable: "--font-noto-sans-kr",
+      },
     ],
   },
 
@@ -27,7 +32,7 @@ export default defineConfig({
   integrations: [
     react(),
     starlight({
-      title: "초보의 골프에 대해",
+      title: "초보의 골프 일지",
       description: "초보의 입장에서 골프를 배우며 느끼고배운 모든 것",
       defaultLocale: "ko",
       customCss: ["./src/styles/global.css"],

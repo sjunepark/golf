@@ -6,31 +6,45 @@
 
 @theme {
   /* Your preferred text font. Starlight uses a system font stack by default. */
-  --font-sans: "Inter";
+  --font-sans: "Inter", "Noto Sans KR";
   /* Your preferred code font. Starlight uses system monospace fonts by default. */
   --font-mono: "IBM Plex Mono";
+
+  --color-nature-50: oklch(95.77% 0.065 157.16);
+  --color-nature-100: oklch(91.44% 0.141 156.56);
+  --color-nature-200: oklch(82.94% 0.2 156.38);
+  --color-nature-300: oklch(76.23% 0.184 156.3);
+  --color-nature-400: oklch(69.66% 0.168 156.31);
+  --color-nature-500: oklch(62.07% 0.15 156.29);
+  --color-nature-600: oklch(55.4% 0.134 156.05);
+  --color-nature-700: oklch(48.55% 0.117 156.2);
+  --color-nature-800: oklch(41.12% 0.099 156.2);
+  --color-nature-900: oklch(34.33% 0.083 156.3);
+  --color-nature-950: oklch(23.61% 0.058 155.64);
+
   /* Your preferred accent color. */
-  --color-accent-50: var(--color-green-50);
-  --color-accent-100: var(--color-green-100);
-  --color-accent-200: var(--color-green-200);
-  --color-accent-300: var(--color-green-300);
-  --color-accent-400: var(--color-green-400);
-  --color-accent-500: var(--color-green-500);
-  --color-accent-600: var(--color-green-600);
-  --color-accent-700: var(--color-green-700);
-  --color-accent-800: var(--color-green-800);
-  --color-accent-900: var(--color-green-900);
-  --color-accent-950: var(--color-green-950);
+  --color-accent-50: var(--color-nature-50);
+  --color-accent-100: var(--color-nature-100);
+  --color-accent-200: var(--color-nature-200);
+  --color-accent-300: var(--color-nature-300);
+  --color-accent-400: var(--color-nature-400);
+  --color-accent-500: var(--color-nature-500);
+  --color-accent-600: var(--color-nature-600);
+  --color-accent-700: var(--color-nature-700);
+  --color-accent-800: var(--color-nature-800);
+  --color-accent-900: var(--color-nature-900);
+  --color-accent-950: var(--color-nature-950);
+
   /* Your preferred gray scale. */
-  --color-gray-50: var(--color-zinc-50);
-  --color-gray-100: var(--color-zinc-100);
-  --color-gray-200: var(--color-zinc-200);
-  --color-gray-300: var(--color-zinc-300);
-  --color-gray-400: var(--color-zinc-400);
-  --color-gray-500: var(--color-zinc-500);
-  --color-gray-600: var(--color-zinc-600);
-  --color-gray-700: var(--color-zinc-700);
-  --color-gray-800: var(--color-zinc-800);
-  --color-gray-900: var(--color-zinc-900);
-  --color-gray-950: var(--color-zinc-950);
+  --color-gray-50: var(--color-neutral-50);
+  --color-gray-100: var(--color-neutral-100);
+  --color-gray-200: var(--color-neutral-200);
+  --color-gray-300: var(--color-neutral-300);
+  --color-gray-400: var(--color-neutral-400);
+  --color-gray-500: var(--color-neutral-500);
+  --color-gray-600: var(--color-neutral-600);
+  --color-gray-700: var(--color-neutral-700);
+  --color-gray-800: var(--color-neutral-800);
+  --color-gray-900: var(--color-neutral-900);
+  --color-gray-950: var(--color-neutral-950);
 }
