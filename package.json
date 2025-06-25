@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier . --write",
-    "format:check": "prettier . --check"
+    "format:check": "prettier . --check",
+    "check": "pnpm lint && pnpm format:check",
+    "fix": "pnpm lint:fix && pnpm format"
   },
   "dependencies": {
     "@astrojs/react": "^4.3.0",

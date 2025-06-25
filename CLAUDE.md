@@ -121,6 +121,12 @@ pnpm format
 
 # Check formatting without writing
 pnpm format:check
+
+# Run both linting and format checking
+pnpm check
+
+# Run both linting with auto-fix and formatting
+pnpm fix
 ```
 
 ## Content Creation
