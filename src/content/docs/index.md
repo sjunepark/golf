@@ -1,18 +1,7 @@
 ---
 title: Golf Documentation
 description: Your personal golf documentation and improvement tracking
-template: splash
-hero:
-  title: "Golf Documentation"
-  tagline: Track your progress, document techniques, and improve your game with structured guides and practice journals.
-  actions:
-    - text: Start Journaling
-      link: /journal/
-      icon: right-arrow
-    - text: Browse Guides
-      link: /guides/
-      icon: external
-      variant: minimal
+tableOfContents: false
 ---
 
 Welcome to your personal golf documentation system! This site helps you:
