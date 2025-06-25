@@ -9,32 +9,13 @@ import { group } from "./config/sidebar";
  *   `src/content/nav/*.ts` files for future internationalization support
  */
 export const sidebar = [
-  // Home/Getting Started
-  {
-    label: "Getting Started",
-    link: "/",
-  },
-
-  // Practice Journal
   group("journal", {
     collapsed: false,
-    items: [
-      group("journal.current", {
-        collapsed: false,
-        autogenerate: {
-          directory: "journal/current",
-        },
-      }),
-      group("journal.logs", {
-        collapsed: false,
-        autogenerate: {
-          directory: "journal/logs",
-        },
-      }),
-    ],
+    autogenerate: {
+      directory: "journal",
+    },
   }),
 
-  // Golf Guides
   group("guides", {
     collapsed: false,
     items: [
@@ -76,13 +57,13 @@ export const sidebar = [
     ],
   }),
 
-  // Reference Materials
   group("reference", {
     collapsed: false,
     autogenerate: {
       directory: "reference",
     },
   }),
+
   group("qna", {
     collapsed: false,
     autogenerate: {

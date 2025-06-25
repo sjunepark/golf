@@ -1,7 +1,9 @@
 ---
-title: 현재 관심사
+title: 현재 관심사 ⭐
 location: 연습장
 lastUpdated: 2025-06-25
+sidebar:
+  order: 1
 ---
 
 ## 손의 길

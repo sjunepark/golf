@@ -6,9 +6,7 @@
 const nav = {
   home: "홈",
 
-  journal: "연습 일지",
-  "journal.current": "현재 연습 중",
-  "journal.logs": "일지",
+  journal: "연습",
 
   guides: "골프 가이드",
   "guides.fundamentals": "기초",
