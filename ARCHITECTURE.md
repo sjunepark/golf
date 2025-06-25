@@ -24,7 +24,8 @@ This document describes the architecture and structure of the golf documentation
 │   │   ├── Header.astro
 │   │   └── HeaderLink.astro
 │   ├── content/           # Content Collections
-│   │   └── blog/          # Blog posts (Markdown/MDX)
+│   │   ├── journal/       # Personal golf diary entries
+│   │   └── guides/        # Organized golf documentation
 │   ├── layouts/           # Page layout templates
 │   │   └── BlogPost.astro
 │   ├── pages/             # File-based routing
@@ -47,21 +48,33 @@ This document describes the architecture and structure of the golf documentation
 
 The site uses Astro's Content Collections for type-safe content management:
 
-- **Location**: `src/content/blog/`
+- **Journal**: `src/content/journal/` - Personal diary entries with practice notes and daily observations
+- **Guides**: `src/content/guides/` - Structured documentation and comprehensive guides
 - **Schema**: Defined in `src/content.config.ts` using Zod validation
 - **Access**: Via Astro's `getCollection()` API
 
 ### Content Schema
 
-Blog posts require the following frontmatter:
+**Journal entries** require the following frontmatter:
+
+```yaml
+---
+title: string # Required
+date: date # Required (entry date)
+tags: array # Optional (e.g., ["드라이버", "백스윙"])
+location: string # Optional (where you practiced) (e.g., "연습장", "베어크리크GC")
+---
+```
+
+**Guides** require the following frontmatter:
 
 ```yaml
 ---
 title: string # Required
 description: string # Required
-pubDate: date # Required (coerced to Date)
+tags: string # Required (e.g., ["드라이버", "백스윙"])
 updatedDate: date # Optional
-heroImage: image # Optional (processed by Astro)
+heroImage: image # Optional
 ---
 ```
 

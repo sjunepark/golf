@@ -1,6 +1,16 @@
 # Golf Documentation Site
 
-A comprehensive golf documentation site built with Astro, featuring guides, tips, and resources for golfers of all skill levels.
+A comprehensive golf documentation site built with Astro, featuring both personal golf learning journal and organized guides.
+
+## Content Categories
+
+### 1. Journal
+
+Personal diary entries documenting daily lessons learned during practice sessions, insights from training, and reflections on improvement. These entries capture the journey of learning golf with raw observations and immediate thoughts.
+
+### 2. Guides
+
+Organized, structured documentation presenting refined knowledge and insights. This content is curated and polished for reference, covering golf techniques, strategies, and comprehensive guides.
 
 ## Features
 
