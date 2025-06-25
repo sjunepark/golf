@@ -129,6 +129,14 @@ pnpm check
 pnpm fix
 ```
 
+### Code Block Formatting
+
+In markdown files, avoid using `astro` as the language identifier in code blocks, as language injection doesn't work properly in VS Code or Prettier and throws errors. Use more generic identifiers instead:
+
+- Use `ts` for TypeScript/JavaScript Astro files
+- Use `html` for HTML-like Astro templates
+- Use `js` for JavaScript examples
+
 ## Content Creation
 
 To add new golf-related content:

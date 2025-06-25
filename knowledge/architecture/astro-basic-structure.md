@@ -47,7 +47,7 @@ The minimal homepage structure:
 
 Minimal configuration:
 
-```js
+```ts
 // @ts-check
 import { defineConfig } from "astro/config";
 

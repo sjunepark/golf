@@ -14,12 +14,12 @@ Only check React documentation for the specific areas listed below. For all othe
 
 ```jsx
 // v18
-import { render } from 'react-dom';
-render(<App />, document.getElementById('root'));
+import { render } from "react-dom";
+render(<App />, document.getElementById("root"));
 
 // v19
-import { createRoot } from 'react-dom/client';
-const root = createRoot(document.getElementById('root'));
+import { createRoot } from "react-dom/client";
+const root = createRoot(document.getElementById("root"));
 root.render(<App />);
 ```
 
@@ -29,19 +29,19 @@ root.render(<App />);
 
 ```jsx
 // v18
-import { hydrate } from 'react-dom';
-hydrate(<App />, document.getElementById('root'));
+import { hydrate } from "react-dom";
+hydrate(<App />, document.getElementById("root"));
 
 // v19
-import { hydrateRoot } from 'react-dom/client';
-hydrateRoot(document.getElementById('root'), <App />);
+import { hydrateRoot } from "react-dom/client";
+hydrateRoot(document.getElementById("root"), <App />);
 ```
 
 ### unmountComponentAtNode → root.unmount()
 
 ```jsx
 // v18
-unmountComponentAtNode(document.getElementById('root'));
+unmountComponentAtNode(document.getElementById("root"));
 
 // v19
 root.unmount();
@@ -51,11 +51,11 @@ root.unmount();
 
 ```jsx
 // v18 - String refs (REMOVED)
-<input ref='input' />
+<input ref="input" />;
 this.refs.input.focus();
 
 // v19 - Use ref callbacks or useRef
-<input ref={input => this.input = input} />
+<input ref={(input) => (this.input = input)} />;
 this.input.focus();
 ```
 
@@ -95,7 +95,7 @@ class Parent extends React.Component {
     foo: PropTypes.string.isRequired,
   };
   getChildContext() {
-    return { foo: 'bar' };
+    return { foo: "bar" };
   }
 }
 
@@ -104,7 +104,7 @@ const FooContext = React.createContext();
 class Parent extends React.Component {
   render() {
     return (
-      <FooContext.Provider value='bar'>
+      <FooContext.Provider value="bar">
         {this.props.children}
       </FooContext.Provider>
     );
@@ -116,10 +116,10 @@ class Parent extends React.Component {
 
 ```ts
 // v18/v19 - ElementRef deprecated in TypeScript definitions
-React.ElementRef<typeof MyComponent> // Deprecated
+React.ElementRef<typeof MyComponent>; // Deprecated
 
 // v19 - Use ComponentRef instead
-React.ComponentRef<typeof MyComponent> // Preferred
+React.ComponentRef<typeof MyComponent>; // Preferred
 ```
 
 **Note**: This is a TypeScript-level deprecation in `@types/react`, not a React runtime change. ElementRef is now an alias to ComponentRef.
@@ -163,9 +163,11 @@ function UpdateName() {
 
 ```jsx
 // v19 - Form actions
-<form action={async (formData) => {
-  await submitForm(formData);
-}}>
+<form
+  action={async (formData) => {
+    await submitForm(formData);
+  }}
+>
   <input name="username" />
   <button type="submit">Submit</button>
 </form>
@@ -175,11 +177,11 @@ function UpdateName() {
 
 ```jsx
 // v19 - Reading promises with use()
-import { use } from 'react';
+import { use } from "react";
 
 function Comments({ commentsPromise }) {
   const comments = use(commentsPromise);
-  return comments.map(comment => <p key={comment.id}>{comment}</p>);
+  return comments.map((comment) => <p key={comment.id}>{comment}</p>);
 }
 ```
 
@@ -283,7 +285,7 @@ useRef();
 createContext();
 
 // v19 - Arguments required
-useRef(undefined);  // Must pass undefined explicitly
+useRef(undefined); // Must pass undefined explicitly
 createContext(undefined);
 ```
 
@@ -333,10 +335,10 @@ declare module "react" {
 
 ```ts
 // v18 - Explicit type arguments often needed
-useReducer<React.Reducer<State, Action>>(reducer)
+useReducer<React.Reducer<State, Action>>(reducer);
 
 // v19 - Better type inference
-useReducer(reducer) // Types inferred automatically
+useReducer(reducer); // Types inferred automatically
 ```
 
 ## 4. Behavioral Changes
@@ -361,7 +363,7 @@ const root = createRoot(container, {
   },
   onCaughtError: (error, errorInfo) => {
     // Log errors caught by Error Boundaries
-  }
+  },
 });
 ```
 

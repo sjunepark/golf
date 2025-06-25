@@ -1,2 +1,14 @@
-# Ignore knowledge documentation files that contain code examples
-knowledge/frameworks/
+# Ignore artifacts:
+dist
+.astro
+
+# Standard
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+
+# lockfiles
+pnpm-lock.yaml
+yarn.lock
+package-lock.json

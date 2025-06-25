@@ -6,39 +6,36 @@ This document outlines the key differences between Astro v4 and v5. Claude Code 
 
 ### Astro.glob() - REMOVED
 
-```js
-// Astro file
+```ts
 // v4
-const posts = await Astro.glob('./posts/*.md');
+const posts = await Astro.glob("./posts/*.md");
 
 // v5
-const posts = Object.values(
-  import.meta.glob('./posts/*.md', { eager: true }),
-);
+const posts = Object.values(import.meta.glob("./posts/*.md", { eager: true }));
 ```
 
 ### output: 'hybrid' - REMOVED
 
-```js
+```ts
 // v4
 export default defineConfig({
-  output: 'hybrid' // REMOVED
+  output: "hybrid", // REMOVED
 });
 
 // v5 - Use 'static' with prerender exports
 export default defineConfig({
-  output: 'static'
+  output: "static",
 });
 ```
 
 ### functionPerRoute - REMOVED
 
-```js
+```ts
 // v4 - Adapter configuration
 setAdapter({
   adapterFeatures: {
-    functionPerRoute: true // REMOVED
-  }
+    functionPerRoute: true, // REMOVED
+  },
 });
 
 // v5 - This is now the default behavior
@@ -46,7 +43,7 @@ setAdapter({
 
 ### @astrojs/lit Integration - REMOVED
 
-```astro
+```html
 <!-- v5 - Use Lit components via client-side scripts -->
 <script>
   import "../components/MyTabs";
@@ -59,23 +56,19 @@ setAdapter({
 
 ### ViewTransitions → ClientRouter
 
-```astro
-<!-- v4 -->
----
+```ts
+// v4
 import { ViewTransitions } from 'astro:transitions';
----
 <ViewTransitions />
 
-<!-- v5 -->
----
+// v5
 import { ClientRouter } from 'astro:transitions';
----
 <ClientRouter />
 ```
 
 ### Build Hook Changes
 
-```js
+```ts
 // v4
 'astro:build:done': ({ routes }) => {
   // routes directly available
@@ -98,7 +91,7 @@ hooks: {
 
 ### Experimental Flags Moved to Stable
 
-```js
+```ts
 // v4
 export default defineConfig({
   experimental: {
@@ -119,20 +112,20 @@ export default defineConfig({
 
 ### Security Default Change
 
-```js
+```ts
 // v5 - security.checkOrigin is now true by default
 // Only add this if you need to disable it
 export default defineConfig({
   output: "server",
   security: {
-    checkOrigin: false
-  }
+    checkOrigin: false,
+  },
 });
 ```
 
 ### Image Endpoint Configuration
 
-```js
+```ts
 // v4
 image: {
   endpoint: "./src/image_endpoint.ts"
@@ -151,39 +144,35 @@ image: {
 
 ### compiledContent() Now Async
 
-```astro
-<!-- v4 -->
----
+```ts
+// v4
 import * as myPost from "../blog/post.md";
 const content = myPost.compiledContent();
----
 
-<!-- v5 -->
----
+// v5
 import * as myPost from "../blog/post.md";
 const content = await myPost.compiledContent();
----
 ```
 
 ## 5. Content Collections
 
 ### slug → id Migration
 
-```astro
-<!-- v4 - Dynamic route using slug -->
+```ts
+// v4 - Dynamic route using slug
 // [slug].astro
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection("blog");
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: post,
   }));
 }
 
-<!-- v5 - Use id instead -->
-// [slug].astro  
+// v5 - Use id instead
+// [slug].astro
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection("blog");
   return posts.map((post) => ({
     params: { slug: post.id },
     props: post,
@@ -213,7 +202,7 @@ export async function getStaticPaths() {
 
 ```ts
 // v4
-import type { RouteData } from 'astro';
+import type { RouteData } from "astro";
 function useRoute(route: RouteData) {}
 
 // v5
@@ -223,10 +212,10 @@ function useRoute(route: IntegrationRouteData) {}
 
 ### distURL Now an Array
 
-```js
+```ts
 // v4
 if (route.distURL) {
-  if (route.distURL.endsWith('index.html')) {
+  if (route.distURL.endsWith("index.html")) {
     // do something
   }
 }
@@ -234,7 +223,7 @@ if (route.distURL) {
 // v5
 if (route.distURL) {
   for (const url of route.distURL) {
-    if (url.endsWith('index.html')) {
+    if (url.endsWith("index.html")) {
       // do something
     }
   }
@@ -245,40 +234,40 @@ if (route.distURL) {
 
 ### Integration Definition
 
-```js
+```ts
 // v4 - String-based definition (REMOVED)
-addDevToolbarApp('./my-app.js');
+addDevToolbarApp("./my-app.js");
 
 // v5 - Object definition required
 addDevToolbarApp({
   id: "my-app",
   name: "My App",
   icon: "<svg>...</svg>",
-  entrypoint: "./my-dev-toolbar-app.mjs"
+  entrypoint: "./my-dev-toolbar-app.mjs",
 });
 ```
 
 ### Entrypoint File
 
-```js
+```ts
 // v4 - Export id, name, icon from entrypoint
-export const id = 'my-app';
-export const name = 'My App';
-export const icon = '<svg>...</svg>';
+export const id = "my-app";
+export const name = "My App";
+export const icon = "<svg>...</svg>";
 
 // v5 - Only export the app object
 export default {
   init() {
     // ...
-  }
-}
+  },
+};
 ```
 
 ## 8. Middleware & Rendering
 
 ### app.render() Signature
 
-```js
+```ts
 // v4
 const response = await app.render(request, routeData, locals);
 
@@ -288,17 +277,17 @@ const response = await app.render(request, { routeData, locals });
 
 ### context.locals Assignment
 
-```js
+```ts
 // v4 - Could overwrite entirely
 ctx.locals = {
   one: 1,
-  two: 2
-}
+  two: 2,
+};
 
 // v5 - Must append to existing
 Object.assign(ctx.locals, {
   one: 1,
-  two: 2
+  two: 2,
 });
 ```
 
@@ -306,47 +295,45 @@ Object.assign(ctx.locals, {
 
 ### Dynamic prerender Export - REMOVED
 
-```astro
-<!-- v4 - Could use dynamic values -->
+```ts
+// v4 - Could use dynamic values
 export const prerender = import.meta.env.SOME_VAR;
 
-<!-- v5 - Must be static true/false -->
+// v5 - Must be static true/false
 export const prerender = true;
 ```
 
 For dynamic prerender, use integration hooks:
 
-```js
+```ts
 // astro.config.mjs
 export default defineConfig({
-  integrations: [{
-    name: 'set-prerender',
-    hooks: {
-      'astro:route:setup': ({ route }) => {
-        if (route.component.endsWith('/blog/[slug].astro')) {
-          route.prerender = process.env.PRERENDER === 'true';
-        }
-      }
-    }
-  }]
+  integrations: [
+    {
+      name: "set-prerender",
+      hooks: {
+        "astro:route:setup": ({ route }) => {
+          if (route.component.endsWith("/blog/[slug].astro")) {
+            route.prerender = process.env.PRERENDER === "true";
+          }
+        },
+      },
+    },
+  ],
 });
 ```
 
 ### Manual Param Decoding Required
 
-```astro
-<!-- v4 - Automatic decoding -->
+```ts
+// v4 - Automatic decoding
 export function getStaticPaths() {
-  return [
-    { params: { id: "%5Bpage%5D" } }
-  ]
+  return [{ params: { id: "%5Bpage%5D" } }];
 }
 
-<!-- v5 - Manual decoding required -->
+// v5 - Manual decoding required
 export function getStaticPaths() {
-  return [
-    { params: { id: decodeURI("%5Bpage%5D") } }
-  ]
+  return [{ params: { id: decodeURI("%5Bpage%5D") } }];
 }
 ```
 
@@ -354,36 +341,44 @@ export function getStaticPaths() {
 
 ### Boolean Attributes
 
-```astro
+```html
 <!-- v5 - Non-boolean HTML attributes now render string values -->
-<p inherit={true}></p>  <!-- Renders: <p inherit="true"></p> -->
-<p inherit={false}></p> <!-- Renders: <p inherit="false"></p> -->
+<p inherit="{true}"></p>
+// Renders:
+<p inherit="true"></p>
+<p inherit="{false}"></p>
+// Renders:
+<p inherit="false"></p>
 
-<p data-light={true}></p>  <!-- Renders: <p data-light="true"></p> -->
-<p data-light={false}></p> <!-- Renders: <p data-light="false"></p> -->
+<p data-light="{true}"></p>
+// Renders:
+<p data-light="true"></p>
+<p data-light="{false}"></p>
+// Renders:
+<p data-light="false"></p>
 ```
 
 ### JavaScript Checks
 
-```js
+```ts
 // v4
-el.getAttribute('inherit') === ''
-el.hasAttribute('data-light')
+el.getAttribute("inherit") === "";
+el.hasAttribute("data-light");
 
 // v5
-el.getAttribute('inherit') === 'false'
-el.dataset.light === 'true'
+el.getAttribute("inherit") === "false";
+el.dataset.light === "true";
 ```
 
 ## 11. Pagination Base Path
 
 ### paginate() URLs Include Base
 
-```astro
-<!-- v4 - Manual base path prepending needed -->
+```ts
+// v4 - Manual base path prepending needed
 const prev = import.meta.env.BASE_URL + page.url.prev;
 
-<!-- v5 - Base automatically included -->
+// v5 - Base automatically included
 const prev = page.url.prev; // Already includes base
 ```
 

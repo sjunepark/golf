@@ -6,7 +6,7 @@ This document outlines the key differences between Tailwind CSS v3 and v4. Claud
 
 ### PostCSS Configuration
 
-```js
+```ts
 // v3
 module.exports = {
   plugins: {
@@ -25,7 +25,7 @@ export default {
 
 ### Vite Configuration
 
-```js
+```ts
 // v4 - Use dedicated Vite plugin
 import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
