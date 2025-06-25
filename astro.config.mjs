@@ -6,6 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 
 import starlight from "@astrojs/starlight";
+import { sidebar } from "./astro.sidebar";
 
 // https://astro.build/config
 export default defineConfig({
@@ -26,26 +27,11 @@ export default defineConfig({
   integrations: [
     react(),
     starlight({
-      title: "Golf Documentation",
-      description: "Your personal golf documentation and improvement tracking",
-      social: [
-        {
-          icon: "github",
-          label: "GitHub",
-          href: "https://github.com",
-        },
-      ],
-      sidebar: [
-        {
-          label: "Journal",
-          autogenerate: { directory: "journal" },
-        },
-        {
-          label: "Guides",
-          autogenerate: { directory: "guides" },
-        },
-      ],
+      title: "초보의 골프에 대해",
+      description: "초보의 입장에서 골프를 배우며 느끼고배운 모든 것",
+      defaultLocale: "ko",
       customCss: ["./src/styles/global.css"],
+      sidebar,
     }),
   ],
 });

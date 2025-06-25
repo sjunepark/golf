@@ -25,16 +25,19 @@
 ### Examples
 
 ❌ **Incorrect** (no language specification):
+
 ```
 const example = "hello world";
 ```
 
 ✅ **Correct** (with language specification):
+
 ```typescript
 const example = "hello world";
 ```
 
 ❌ **Incorrect** (no language for directory structure):
+
 ```
 src/
 ├── components/
@@ -42,6 +45,7 @@ src/
 ```
 
 ✅ **Correct** (with text specification):
+
 ```text
 src/
 ├── components/
