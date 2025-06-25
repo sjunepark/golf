@@ -51,6 +51,10 @@ Modern frontend technologies evolve rapidly. Always verify current documentation
 - **High Priority Task**: Converting Headless UI to Shadcn UI when implementing Tailwind Plus designs
 - **Implementation Strategy**: Preserve Tailwind Plus styling while using Shadcn component structure
 
+### React 19 TypeScript
+
+Use `React.ComponentRef` instead of the deprecated `React.ElementRef` in TypeScript definitions. This is a common error when copying Shadcn UI components.
+
 ### Color Theming System
 
 **CRITICAL: Always use CSS variables, never hardcoded color utility classes.**

@@ -112,6 +112,18 @@ class Parent extends React.Component {
 }
 ```
 
+### ElementRef → ComponentRef (TypeScript Only)
+
+```ts
+// v18/v19 - ElementRef deprecated in TypeScript definitions
+React.ElementRef<typeof MyComponent> // Deprecated
+
+// v19 - Use ComponentRef instead
+React.ComponentRef<typeof MyComponent> // Preferred
+```
+
+**Note**: This is a TypeScript-level deprecation in `@types/react`, not a React runtime change. ElementRef is now an alias to ComponentRef.
+
 ### Other Removed APIs
 
 - `React.createFactory` - Use JSX instead
