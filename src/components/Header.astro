@@ -1,0 +1,93 @@
+---
+import { ModeToggleDropdown } from "@/components/theme/ModeToggleDropdown";
+---
+
+<header class="border-border bg-background border-b">
+  <div class="px-4 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo/Brand -->
+      <div class="flex items-center space-x-2">
+        <h1 class="text-foreground text-2xl font-bold">Golf Docs</h1>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="hidden items-center space-x-8 md:flex">
+        <a
+          href="/"
+          class="text-muted-foreground hover:text-foreground transition-colors"
+        >
+          Home
+        </a>
+        <a
+          href="/journal"
+          class="text-muted-foreground hover:text-foreground transition-colors"
+        >
+          Journal
+        </a>
+        <a
+          href="/guides"
+          class="text-muted-foreground hover:text-foreground transition-colors"
+        >
+          Guides
+        </a>
+        <a
+          href="/about"
+          class="text-muted-foreground hover:text-foreground transition-colors"
+        >
+          About
+        </a>
+      </nav>
+
+      <!-- Theme Toggle & Mobile Menu -->
+      <div class="flex items-center space-x-3">
+        <ModeToggleDropdown client:load />
+
+        <!-- Mobile Menu Button -->
+        <button
+          class="text-muted-foreground hover:text-foreground p-2 md:hidden"
+        >
+          <svg
+            class="h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation (hidden by default) -->
+    <nav class="border-border mt-4 space-y-2 border-t pt-4 md:hidden">
+      <a
+        href="/"
+        class="text-muted-foreground hover:text-foreground block py-2 transition-colors"
+      >
+        Home
+      </a>
+      <a
+        href="/journal"
+        class="text-muted-foreground hover:text-foreground block py-2 transition-colors"
+      >
+        Journal
+      </a>
+      <a
+        href="/guides"
+        class="text-muted-foreground hover:text-foreground block py-2 transition-colors"
+      >
+        Guides
+      </a>
+      <a
+        href="/about"
+        class="text-muted-foreground hover:text-foreground block py-2 transition-colors"
+      >
+        About
+      </a>
+    </nav>
+  </div>
+</header>
