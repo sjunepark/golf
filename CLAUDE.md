@@ -66,6 +66,8 @@ This ensures consistent theming and proper dark mode support. All colors are def
 
 #### Common Variable Mappings
 
+Check [@.src/styles/global.css](./src/styles/global.css) for the full list of variables.
+
 - **Primary colors**: `primary`, `primary-foreground`
 - **Backgrounds**: `background`, `muted`, `card`
 - **Text**: `foreground`, `muted-foreground`
@@ -74,10 +76,9 @@ This ensures consistent theming and proper dark mode support. All colors are def
 
 #### Tailwind Plus Conversion
 
-Replace fixed colors with semantic variables:
+Replace fixed colors with semantic variables, for example:
+
 - `bg-indigo-600` → `bg-primary`
-- `text-gray-900` → `text-foreground`
-- `border-slate-200` → `border-border`
 
 ### Design References
 
