@@ -6,7 +6,7 @@
 
 @theme {
   /* Your preferred text font. Starlight uses a system font stack by default. */
-  --font-sans: "Inter", "Noto Sans KR";
+  --font-sans: "Roboto Variable", "Noto Sans KR Variable";
   /* Your preferred code font. Starlight uses system monospace fonts by default. */
   --font-mono: "IBM Plex Mono";
 

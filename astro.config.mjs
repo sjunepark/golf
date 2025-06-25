@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, fontProviders } from "astro/config";
+import { defineConfig } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
@@ -10,21 +10,6 @@ import { sidebar } from "./astro.sidebar";
 
 // https://astro.build/config
 export default defineConfig({
-  experimental: {
-    fonts: [
-      {
-        provider: fontProviders.fontsource(),
-        name: "Inter",
-        cssVariable: "--font-inter",
-      },
-      {
-        provider: fontProviders.fontsource(),
-        name: "Noto Sans KR",
-        cssVariable: "--font-noto-sans-kr",
-      },
-    ],
-  },
-
   vite: {
     plugins: [tailwindcss()],
   },
@@ -35,7 +20,12 @@ export default defineConfig({
       title: "초보의 골프 일지",
       description: "초보의 입장에서 골프를 배우며 느끼고배운 모든 것",
       defaultLocale: "ko",
-      customCss: ["./src/styles/global.css"],
+      customCss: [
+        // This order has to be maintained for fonts to be applied properly
+        "@fontsource-variable/roboto",
+        "@fontsource-variable/noto-sans-kr",
+        "./src/styles/global.css",
+      ],
       sidebar,
     }),
   ],
