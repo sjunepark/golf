@@ -19,13 +19,18 @@ export const sidebar = [
   group("journal", {
     collapsed: false,
     items: [
-      {
-        label: "Recent Entries",
+      group("journal.current", {
+        collapsed: false,
         autogenerate: {
-          directory: "journal",
-          collapsed: false,
+          directory: "journal/current",
         },
-      },
+      }),
+      group("journal.logs", {
+        collapsed: false,
+        autogenerate: {
+          directory: "journal/logs",
+        },
+      }),
     ],
   }),
 
@@ -76,6 +81,12 @@ export const sidebar = [
     collapsed: false,
     autogenerate: {
       directory: "reference",
+    },
+  }),
+  group("qna", {
+    collapsed: false,
+    autogenerate: {
+      directory: "qna",
     },
   }),
 ] satisfies StarlightUserConfig["sidebar"];
