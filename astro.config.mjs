@@ -6,7 +6,6 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 
 import starlight from "@astrojs/starlight";
-import { sidebar } from "./astro.sidebar";
 
 // https://astro.build/config
 export default defineConfig({
@@ -26,7 +25,27 @@ export default defineConfig({
         "@fontsource-variable/noto-sans-kr",
         "./src/styles/global.css",
       ],
-      sidebar,
+      sidebar: [
+        {
+          label: "일지",
+          collapsed: false,
+          autogenerate: { directory: "journal" },
+        },
+
+        {
+          label: "스윙",
+          collapsed: false,
+          autogenerate: { directory: "swing" },
+        },
+
+        {
+          label: "추천 참고자료",
+          collapsed: false,
+          autogenerate: { directory: "reference" },
+        },
+
+        { label: "Q&A", collapsed: false, autogenerate: { directory: "qna" } },
+      ],
     }),
   ],
 });

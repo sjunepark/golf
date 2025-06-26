@@ -10,7 +10,8 @@ export const collections = {
         tags: z
           .array(
             z.enum([
-              "기타",
+              "기본",
+              "스윙",
               "드라이버",
               "우드",
               "아이언",
