@@ -4,6 +4,7 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
 import starlight from "@astrojs/starlight";
+import starlightLinksValidator from "starlight-links-validator";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,6 +14,7 @@ export default defineConfig({
 
   integrations: [
     starlight({
+      plugins: [starlightLinksValidator()],
       title: "초보의 골프 일지",
       description: "초보의 입장에서 골프를 배우며 느끼고배운 모든 것",
       defaultLocale: "ko",

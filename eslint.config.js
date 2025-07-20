@@ -58,7 +58,6 @@ export default defineConfig([
 
   // astro setup with a11y
   astro.configs.recommended,
-  astro.configs["jsx-a11y-recommended"],
   {
     files: ["**/*.astro"],
     languageOptions: {
