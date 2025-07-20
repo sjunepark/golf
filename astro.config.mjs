@@ -3,8 +3,6 @@ import { defineConfig } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
-import react from "@astrojs/react";
-
 import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
@@ -14,7 +12,6 @@ export default defineConfig({
   },
 
   integrations: [
-    react(),
     starlight({
       title: "초보의 골프 일지",
       description: "초보의 입장에서 골프를 배우며 느끼고배운 모든 것",

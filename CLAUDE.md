@@ -4,11 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## CRITICAL: Always Use Latest Documentation
 
-**MANDATORY**: For every task involving Tailwind, Astro, or React, you MUST use the Context7 MCP tool to fetch the most recent documentation.
+**MANDATORY**: For every task involving Tailwind or Astro, you MUST use the Context7 MCP tool to fetch the most recent documentation.
 
 - **Tailwind CSS**: You probably have knowledge on v3, but this library uses v4. **ALWAYS** check [@./knowledge/frameworks/tailwind-v3-vs-v4.md](./knowledge/frameworks/tailwind-v3-vs-v4.md)
 - **Astro**: You probably have knowledge on v4, but this library uses v5. **ALWAYS** check [@./knowledge/frameworks/astro-v4-vs-v5.md](./knowledge/frameworks/astro-v4-vs-v5.md)
-- **React**: You probably have knowledge on v18, but this library uses v19. **ALWAYS** check [@./knowledge/frameworks/react-v18-vs-v19.md](./knowledge/frameworks/react-v18-vs-v19.md)
 
 **WARNING**: If you skip fetching recent documentation, you MUST inform the user in ALL CAPS, including the specific reason why you didn't fetch it.
 
@@ -20,7 +19,6 @@ This is a golf documentation site built with Astro, using the blog starter templ
 - Content management through Astro's Content Collections
 - Blog posts written in Markdown/MDX
 - Tailwind CSS for styling
-- Shadcn UI components
 - RSS feed and sitemap generation
 
 ## Architecture
@@ -31,29 +29,15 @@ For detailed architecture information, see [@ARCHITECTURE.md](ARCHITECTURE.md).
 
 ### Modern Frontend Dependencies
 
-Modern frontend technologies evolve rapidly. Always verify current documentation for:
+Modern frontend technologies evolve rapidly. Always verify the current documentation for:
 
 - **Tailwind CSS v4**: Recently released - check latest docs for breaking changes and new features
 - **Astro v5**: Recently released - verify API changes and new patterns
-- **React 19**: Recently released - check for new features and compatibility
 
 ### UI Development Approach
 
-- **Primary UI Library**: Shadcn UI for component foundation
 - **Design System**: Tailwind Plus (formerly Tailwind UI) for design patterns and layouts
 - **Additional Tools**: v0 for rapid UI prototyping when needed
-
-### CRITICAL: Headless UI to Shadcn UI Refactoring
-
-**Tailwind Plus code samples use Headless UI, but this project uses Shadcn UI instead.**
-
-- **Never use Headless UI components** - all interactive components must use Shadcn UI
-- **High Priority Task**: Converting Headless UI to Shadcn UI when implementing Tailwind Plus designs
-- **Implementation Strategy**: Preserve Tailwind Plus styling while using Shadcn component structure
-
-### React 19 TypeScript
-
-Use `React.ComponentRef` instead of the deprecated `React.ElementRef` in TypeScript definitions. This is a common error when copying Shadcn UI components.
 
 ### Color Theming System
 
@@ -88,7 +72,7 @@ Replace fixed colors with semantic variables, for example:
 
 - Design reference files should be stored in the `knowledge/` directory
 - When design guidance is needed, request specific Tailwind Plus references
-- Tailwind Plus provides both component and layout examples - utilize both
+- Tailwind Plus provides both component and layout examples - utilize it both
 
 ## Security Considerations
 
@@ -131,7 +115,7 @@ pnpm fix
 
 ### Code Block Formatting
 
-In markdown files, avoid using `astro` as the language identifier in code blocks, as language injection doesn't work properly in VS Code or Prettier and throws errors. Use more generic identifiers instead:
+In Markdown files, avoid using `astro` as the language identifier in code blocks, as language injection doesn't work properly in VS Code or Prettier and throws errors. Use more generic identifiers instead:
 
 - Use `ts` for TypeScript/JavaScript Astro files
 - Use `html` for HTML-like Astro templates
@@ -143,7 +127,7 @@ To add new golf-related content:
 
 1. Create `.md` or `.mdx` files in `src/content/blog/`
 2. Include required frontmatter fields
-3. Content automatically appears in blog index and RSS feed
+3. Content automatically appears in the blog index and RSS feed
 4. Images should be placed in `src/assets/` and referenced in frontmatter
 
 ## Site Configuration

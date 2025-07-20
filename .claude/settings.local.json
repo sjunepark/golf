@@ -3,7 +3,8 @@
     "allow": [
       "WebFetch(domain:docs.astro.build)",
       "mcp__fetch__fetch",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(rg:*)"
     ],
     "deny": []
   }
