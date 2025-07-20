@@ -4,6 +4,7 @@ import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import astro from "eslint-plugin-astro";
 import prettier from "eslint-plugin-prettier";
+import unusedImports from "eslint-plugin-unused-imports";
 
 // parsers
 const tsParser = tseslint.parser;
@@ -32,6 +33,26 @@ export default defineConfig([
     rules: {
       // disable warnings, since prettier should format on save
       "prettier/prettier": "off",
+    },
+  },
+
+  // Unused imports config
+  {
+    plugins: {
+      "unused-imports": unusedImports,
+    },
+    rules: {
+      "@typescript-eslint/no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "error",
+        {
+          vars: "all",
+          varsIgnorePattern: "^_",
+          args: "after-used",
+          argsIgnorePattern: "^_",
+        },
+      ],
     },
   },
 
