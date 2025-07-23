@@ -28,7 +28,9 @@ draft: true
 
 ## 왼쪽 무릎
 
-- [영상](https://www.youtube.com/watch?v=LeDu2DJB_Q4)
+- 영상
+  - [심 프로님 영상 1.](https://www.youtube.com/watch?v=LeDu2DJB_Q4)
+  - [심 프로님 영상 2.](https://www.youtube.com/watch?v=GfOE3DdJ52I)
 - 왼쪽 무릎이 앞으로 나가서는 절대 안됨
 - 왼쪽 무릎이 오른쪽 무릎을 향해 들어오는 느낌
 - 점검: 왼쪽 발등이 가려지는 지 확인. 가려지면 온쪽 무릎이 나가는 것
